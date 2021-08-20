@@ -47,6 +47,9 @@ app.get(`/api/breathtaking/2`, (req,res)=>{
   let b2 = 'https://i.kym-cdn.com/entries/icons/original/000/030/115/cover4.jpg'
   res.status(200).send(b2)
 });
-app.get
+app.get(`/api/breathtaking/3`, (req,res)=>{
+  let b3 = 'https://i.dailymail.co.uk/i/pix/2015/11/23/18/2EBC866300000578-3330838-One_lucky_dog_Keanu_Reeves_took_a_break_from_the_action_for_a_wa-a-22_1448305027340.jpg'
+  res.status(200).send(b3)
+});
 
 app.listen(4000, () => console.log("Server running on 4000"));

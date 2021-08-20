@@ -8,5 +8,8 @@ button[id="laugh"]{
 }
 
 select {
-    orientation: center;
+    align-items: bottom;
+}
+img {
+    align-items: bottom;
 }
