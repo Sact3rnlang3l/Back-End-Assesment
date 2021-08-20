@@ -1,0 +1,12 @@
+body  {
+    background-color: #232323;
+}
+
+button[id="laugh"]{
+    width: 100px; 
+    height: 25px;
+}
+
+select {
+    orientation: center;
+}
