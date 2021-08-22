@@ -2,57 +2,23 @@
 <html>
   <head>
     <title>Back End Assessment</title>
-    <link rel="stylesheet" href="styles.css">
-
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css"/>  
   </head>
-  <body class="container">
-    <button id="complimentButton">Get a compliment</button>
-    <button id="fortune_button">Tell me my Fortune</button>
-    <button id="dadJoke">I Swear I'll do it</button>
-    <select id="K">
-      <option value="breath">You're Breathtaking</option>
-      <option value="2">Don't Worry, we Got Short</option>
-      <option value="3">Dog meets man, Man is John</option>
-    </select>
-    <button id="laugh">Just Memes</button>
+  <body class="ma4 ma5-l">
+    <div class="flex justify-around">
+    <div><button id="complimentButton">Get a compliment</button></div>
+    <div><button class="db" id="fortune_button">Tell me my Fortune</button></div>
+    <div><button id="dadJoke">I Swear I'll do it</button></div>
+    <div><select id="K">
+      <option value="">Select One:</option>
+      <option value="0">You're Breathtaking</option>
+      <option value="1">Don't Worry, we Got Short</option>
+      <option value="2">Dog meets man, Man is John</option>
+    </select></div>
+    <div><button id="meme">Just Memes</button></div></div>
+    <div id="display" class="mt4 flex justify-center">Hello Nurse</div>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script>
-      document.getElementById("complimentButton").onclick = function () {
-        axios.get("http://localhost:4000/api/compliment/")
-            .then(function (response) {
-              const data = response.data;
-              alert(data);
-            });
-      };
-
-      document.getElementById("fortune_button").onclick = function () {
-        axios.get('http://localhost:4000/api/fortunes')
-          .then(function (response){
-            const fortune = response.data;
-            alert(fortune)
-          })
-        }
-        // document.getElementById("dadJoke").onclick = function () {
-        //   axios.get("https://icanhazdadjoke.com/")
-        //   .then(function(res){
-        //     console.log(res)
-        //     // const meme = res.data.body
-        //     // alert(meme)
-        // })
-      // }
-    let Breathtaking = document.getElementById("K").value;
-    let select = document.getElementById("K")
-    select.addEventListener("change", function(){
-          // console.log(Breathtaking)
-          axios.get(`http://localhost:4000/api/breathtaking/${Breathtaking}`)
-            .then(function (res){
-            const keanu = res.data;
-            let img = document.createElement("img")  
-                  img.src = res.data
-                  document.body.append(img)
-          })
-        })
-        // Laugh is just memes my dude
-    </script>
+    <script src="main.js"></script>
   </body>
 </html>
