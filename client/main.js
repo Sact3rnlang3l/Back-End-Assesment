@@ -1,3 +1,5 @@
+// const secrets = require('secrets.js')
+
 document.getElementById("complimentButton").onclick = function () {
   axios.get("http://localhost:4000/api/compliment/").then(handleText);
 };
@@ -31,7 +33,7 @@ select.addEventListener("change", function () {
  let meme = document.getElementById("meme")
  meme.addEventListener('click', function () {
     //  console.log('gotit')
-    axios.get('https://api.giphy.com/v1/gifs/random?api_key=NYOEawyux3rXWrO9tyRGCMrDjMyJd2Sk&tag=funny&rating=g')
+    axios.get(`https://api.giphy.com/v1/gifs/random?api_key=${api_keys.giphy_api_key}&tag=funny&rating=g`)
     .then((res) =>{
         // console.log(res.data)
         const image = document.createElement("img")
